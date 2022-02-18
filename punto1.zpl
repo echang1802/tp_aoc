@@ -31,4 +31,4 @@ subto max_prod_ter: forall <t> in T:
 
 # Restriccion de demanda
 subto demand: forall <t> in T:
-    sum <i> in T with i <= t: (x[i] + y[i] - mu[i]) >= 0
+    sum <i> in T with i <= t: (x[i] + y[i] - mu[i]) >= 0;
