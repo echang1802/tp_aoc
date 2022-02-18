@@ -4,6 +4,8 @@ param n := 18;
 
 # Conjunto de periodos
 set T := { 1 .. n };
+
+# Conjunto de costos
 set C := { read "data/production_costs.dat" as "<1s>" };
 
 # Demanda de cada periodo
