@@ -19,16 +19,16 @@ var x[T] >= 0;
 var y[T] >= 0;
 
 # Funcion objetivo
-minimize fobj: sum <t> in T: costs["own"] * x[t] + costs["outsourced"] * y[t];
+minimize fobj: sum <t> in T: (costs["own"] * x[t] + costs["outsourced"] * y[t]);
 
 # Produccion maxima
-subto prod: forall <t> in T:
+subto max_prod: forall <t> in T:
     x[t] <= 50;
 
 # Produccion maxima tercerizada
-subto prod_ter: forall <t> in T:
+subto max_prod_ter: forall <t> in T:
     y[t] <= 200;
 
 # Restriccion de demanda
-subto demanda: foall <t> in T:
-    sum <i> in { 1 .. t }: x[i] + y[i] - mu[i] >= 0
+subto demand: forall <t> in T:
+    sum <i> in T with i <= t: (x[i] + y[i] - mu[i]) >= 0
